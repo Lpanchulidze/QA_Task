@@ -4,7 +4,6 @@ import Steps.UserSteps;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
-import java.awt.image.RescaleOp;
 
 public class UsersTest {
 
@@ -18,10 +17,18 @@ public class UsersTest {
 
         int dataSize = path.getData().size();
         int limit = path.getMeta().getPagination().getLimit();
+
         userSteps
                 .checkDataSizeIsEqualToLimit(limit,dataSize);
 
-
+        for(int i = 0; i < dataSize; i++) {
+            userSteps
+                    .checkGender(path.getData().get(i).getGender())
+                    .checkStatus(path.getData().get(i).getStatus())
+                    .checkValueIsNotNull(path.getData().get(i).getId())
+                    .checkValueIsNotNull(path.getData().get(i).getName())
+                    .checkValueIsNotNull(path.getData().get(i).getEmail());
+        }
 
     }
 
