@@ -5,6 +5,7 @@ import org.testng.Assert;
 
 import java.awt.image.RescaleOp;
 
+import static Utils.Constant.UsersUrl;
 import static io.restassured.RestAssured.given;
 
 public class UserRequest {
@@ -14,7 +15,7 @@ public class UserRequest {
         response = given()
                 .header("Content-Type","application/json")
                 .when()
-                .get("https://gorest.co.in/public-api/users")
+                .get(UsersUrl)
                 .then()
                 .and().extract().response();
         int statusCode = response.statusCode();
