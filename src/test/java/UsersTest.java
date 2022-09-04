@@ -1,6 +1,8 @@
 import Models.UserDataModel;
 import Steps.UserRequest;
 import Steps.UserSteps;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
@@ -11,6 +13,8 @@ public class UsersTest {
     UserSteps userSteps = new UserSteps();
 
     @Test
+    @Epic("API")
+    @Description("Users")
     public void publicApiUsersTest() {
         Response response = userRequest.getUsers();
         UserDataModel path = response.getBody().as(UserDataModel.class);
