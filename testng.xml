@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Test" annotations="JDK" verbose="3" configfailurepolicy="continue"  thread-count="1">
+
+    <listeners>
+        <listener class-name="Utils.MyTransformer"/>
+    </listeners>
+
+    <test name="API/Users">
+        <classes>
+            <class name="UsersTest"/>
+        </classes>
+    </test>
+
+</suite>
