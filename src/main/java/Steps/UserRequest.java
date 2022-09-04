@@ -4,8 +4,6 @@ import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.testng.Assert;
 
-import java.awt.image.RescaleOp;
-
 import static Utils.Constant.UsersUrl;
 import static io.restassured.RestAssured.given;
 

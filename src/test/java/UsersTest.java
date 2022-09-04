@@ -6,7 +6,6 @@ import io.qameta.allure.Epic;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
-
 public class UsersTest {
 
     UserRequest userRequest = new UserRequest();
@@ -33,7 +32,6 @@ public class UsersTest {
                     .checkValueIsNotNull(path.getData().get(i).getName())
                     .checkValueIsNotNull(path.getData().get(i).getEmail());
         }
-
     }
 
 
