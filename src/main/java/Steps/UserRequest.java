@@ -1,5 +1,6 @@
 package Steps;
 
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.testng.Assert;
 
@@ -10,6 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class UserRequest {
 
+    @Step
     public Response getUsers() {
         Response response;
         response = given()
